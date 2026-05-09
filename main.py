@@ -56,7 +56,7 @@ render_sidebar()
 render_app_header()
 
 tab_chat, tab_graph, tab_ingest, tab_eval = st.tabs(
-    ["问答", "图谱", "录入", "评测"]
+    ["问答中心", "知识图谱", "知识录入", "系统评测"]
 )
 
 with tab_chat:

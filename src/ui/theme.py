@@ -10,20 +10,20 @@ import streamlit as st
 
 
 _COLORS = {
-    "bg": "#101413",
-    "bg-soft": "#151a18",
-    "panel": "rgba(244, 239, 226, 0.055)",
-    "panel-strong": "rgba(244, 239, 226, 0.085)",
-    "text": "#f0eadc",
-    "muted": "rgba(240, 234, 220, 0.62)",
-    "faint": "rgba(240, 234, 220, 0.38)",
-    "line": "rgba(240, 234, 220, 0.12)",
-    "line-strong": "rgba(240, 234, 220, 0.22)",
-    "green": "#7fc7a4",
-    "green-deep": "#2f6f59",
-    "amber": "#d8a35d",
-    "red": "#d36b62",
-    "blue": "#8fb7c8",
+    "bg": "#0d1211",
+    "bg-soft": "#151b19",
+    "panel": "rgba(231, 241, 228, 0.065)",
+    "panel-strong": "rgba(231, 241, 228, 0.105)",
+    "text": "#f2f0e7",
+    "muted": "rgba(242, 240, 231, 0.66)",
+    "faint": "rgba(242, 240, 231, 0.42)",
+    "line": "rgba(242, 240, 231, 0.14)",
+    "line-strong": "rgba(242, 240, 231, 0.26)",
+    "green": "#9bd7b4",
+    "green-deep": "#2f725d",
+    "amber": "#e1b16d",
+    "red": "#db756a",
+    "blue": "#9fc8d4",
     "ink": "#080b0a",
 }
 
@@ -50,8 +50,9 @@ _GLOBAL_CSS = """\
 html, body, .stApp {
   color: var(--sip-text) !important;
   background:
-    radial-gradient(circle at 15% -10%, rgba(127,199,164,0.10), transparent 28rem),
-    linear-gradient(180deg, #111513 0%, #0d1110 55%, #0b0e0d 100%) !important;
+    radial-gradient(circle at 15% -8%, rgba(155,215,180,0.18), transparent 25rem),
+    radial-gradient(circle at 88% 12%, rgba(159,200,212,0.10), transparent 22rem),
+    linear-gradient(180deg, #101614 0%, #0e1312 48%, #0a0d0c 100%) !important;
   font-family: "Aptos", "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif !important;
 }
 
@@ -60,7 +61,7 @@ html, body, .stApp {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.22;
   background-image:
     linear-gradient(rgba(240,234,220,0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(240,234,220,0.03) 1px, transparent 1px);
@@ -117,8 +118,8 @@ hr {
 .sip-hero {
   border: 1px solid var(--sip-line);
   background:
-    linear-gradient(135deg, rgba(244,239,226,0.08), rgba(244,239,226,0.025)),
-    radial-gradient(circle at 88% 8%, rgba(127,199,164,0.12), transparent 18rem);
+    linear-gradient(135deg, rgba(242,240,231,0.10), rgba(242,240,231,0.028)),
+    radial-gradient(circle at 88% 8%, rgba(155,215,180,0.18), transparent 18rem);
   border-radius: var(--sip-radius);
   padding: 1.35rem 1.45rem 1.25rem;
   margin-bottom: 1rem;
@@ -162,24 +163,34 @@ hr {
 }
 
 /* Navigation tabs */
-section[data-testid="stTabs"] { margin-top: 0.4rem; }
+section[data-testid="stTabs"] { margin-top: 0.65rem; }
+section[data-testid="stTabs"] div[data-baseweb="tab-list"] {
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--sip-line);
+}
 section[data-testid="stTabs"] button[data-baseweb="tab"] {
-  min-height: 2.65rem;
-  padding: 0.45rem 1rem;
-  border-radius: var(--sip-radius) var(--sip-radius) 0 0;
+  min-height: 3.45rem;
+  padding: 0.72rem 1.65rem;
+  border-radius: 12px 12px 0 0;
   color: var(--sip-muted);
-  border: 1px solid transparent;
-  font-weight: 650;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  border: 1px solid var(--sip-line);
+  border-bottom: 0;
+  background: rgba(242,240,231,0.035);
+  font-size: 1.02rem;
+  font-weight: 780;
+  letter-spacing: 0.02em;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 section[data-testid="stTabs"] button[data-baseweb="tab"]:hover {
-  background: rgba(244,239,226,0.045);
+  background: rgba(155,215,180,0.075);
   color: var(--sip-text);
+  transform: translateY(-1px);
 }
 section[data-testid="stTabs"] button[data-baseweb="tab"][aria-selected="true"] {
-  background: rgba(127,199,164,0.10);
+  background: linear-gradient(180deg, rgba(155,215,180,0.20), rgba(155,215,180,0.08));
   color: var(--sip-green);
-  border-color: rgba(127,199,164,0.22);
+  border-color: rgba(155,215,180,0.42);
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.08) inset, 0 12px 28px rgba(0,0,0,0.18);
 }
 
 /* Native controls */
@@ -192,7 +203,7 @@ button[kind="primary"] {
   box-shadow: 0 10px 24px rgba(127,199,164,0.15) !important;
 }
 button[kind="secondary"] {
-  background: rgba(244,239,226,0.045) !important;
+  background: rgba(242,240,231,0.055) !important;
   color: var(--sip-text) !important;
   border: 1px solid var(--sip-line) !important;
   border-radius: var(--sip-radius) !important;
@@ -202,19 +213,22 @@ button:hover {
   transform: translateY(-1px);
   border-color: var(--sip-line-strong) !important;
 }
+div[data-testid="stButton"] button {
+  min-height: 2.65rem;
+}
 div[data-baseweb="select"] > div,
 input,
 textarea,
 [data-testid="stFileUploader"] section {
   border-radius: var(--sip-radius) !important;
   border-color: var(--sip-line) !important;
-  background: rgba(244,239,226,0.04) !important;
+  background: rgba(242,240,231,0.055) !important;
 }
 
 /* Containers and cards */
 [data-testid="stVerticalBlockBorderWrapper"] {
   border-color: var(--sip-line) !important;
-  background: rgba(244,239,226,0.035) !important;
+  background: rgba(242,240,231,0.042) !important;
   border-radius: var(--sip-radius) !important;
 }
 .sip-panel-title {
@@ -262,7 +276,9 @@ div[data-testid="stStatus"] {
 
 /* Sidebar */
 section[data-testid="stSidebar"] {
-  background: linear-gradient(180deg, #111614, #0d1110) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(155,215,180,0.14), transparent 18rem),
+    linear-gradient(180deg, #111816, #0d1110) !important;
   border-right: 1px solid var(--sip-line);
 }
 section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
@@ -272,6 +288,14 @@ section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
   border-bottom: 1px solid var(--sip-line);
   padding: 0.25rem 0 0.85rem;
   margin-bottom: 0.8rem;
+}
+.sip-bot-frame {
+  border: 1px solid rgba(155,215,180,0.24);
+  background: linear-gradient(180deg, rgba(155,215,180,0.10), rgba(159,200,212,0.045));
+  border-radius: 14px;
+  padding: 0.4rem 0.35rem 0.15rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.20);
 }
 .sip-sidebar-brand-title {
   font-family: "Georgia", "Times New Roman", "Noto Serif SC", serif;
@@ -327,13 +351,28 @@ section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
 
 /* Chat */
 [data-testid="stChatMessage"] {
-  border: 1px solid rgba(240,234,220,0.09);
-  background: rgba(244,239,226,0.035);
-  border-radius: var(--sip-radius);
-  margin-bottom: 0.55rem;
+  border: 1px solid rgba(242,240,231,0.12);
+  background: linear-gradient(180deg, rgba(242,240,231,0.060), rgba(242,240,231,0.036));
+  border-radius: 14px;
+  margin-bottom: 0.68rem;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.15);
 }
 [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
-  background: rgba(127,199,164,0.07);
+  border-color: rgba(155,215,180,0.24);
+  background: linear-gradient(180deg, rgba(155,215,180,0.14), rgba(155,215,180,0.075));
+}
+[data-testid="stChatInput"] {
+  border: 1px solid rgba(155,215,180,0.26);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.32);
+  background: rgba(13,18,17,0.88);
+}
+[data-testid="stChatInput"] textarea {
+  min-height: 3.2rem !important;
+  font-size: 0.98rem !important;
+}
+.stChatInputContainer {
+  background: transparent !important;
 }
 .sip-source-title {
   display: flex;
@@ -349,7 +388,7 @@ section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
   padding: 0.48rem 0.75rem;
   border-left: 3px solid var(--sip-green);
   border-radius: 0 var(--sip-radius) var(--sip-radius) 0;
-  background: rgba(127,199,164,0.055);
+  background: rgba(155,215,180,0.07);
   color: rgba(240,234,220,0.78);
 }
 
@@ -365,7 +404,18 @@ section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
   border: 1px solid var(--sip-line);
   border-radius: 999px;
   padding: 0.22rem 0.58rem;
-  background: rgba(244,239,226,0.035);
+  background: rgba(242,240,231,0.045);
+}
+
+/* Suggestion buttons: make first-screen prompts feel like real actions */
+button[title^="点击提问"] {
+  min-height: 3.15rem !important;
+  white-space: normal !important;
+  line-height: 1.35 !important;
+  background: linear-gradient(180deg, rgba(242,240,231,0.075), rgba(242,240,231,0.038)) !important;
+}
+button[title^="点击提问"]:hover {
+  background: linear-gradient(180deg, rgba(155,215,180,0.16), rgba(155,215,180,0.07)) !important;
 }
 
 /* Dataframes and charts */
@@ -397,9 +447,9 @@ section[data-testid="stMain"] .block-container > div:has(.stChatInput) {
   position: sticky !important;
   bottom: 0 !important;
   z-index: 10 !important;
-  background: linear-gradient(180deg, rgba(16,20,19,0), var(--sip-bg) 22%) !important;
-  padding-top: 1rem !important;
-  padding-bottom: 0.55rem !important;
+  background: linear-gradient(180deg, rgba(13,18,17,0), rgba(13,18,17,0.96) 26%, var(--sip-bg) 100%) !important;
+  padding-top: 1.15rem !important;
+  padding-bottom: 0.75rem !important;
 }
 """
 
