@@ -16,6 +16,7 @@ import streamlit as st
 from src.rag_engine import get_rag
 from src.ui import (
     apply_theme,
+    render_app_header,
     render_chat_tab,
     render_eval_tab,
     render_graph_tab,
@@ -52,11 +53,10 @@ render_sidebar()
 # --------------------------------------------------------------------------- #
 # 主标题 & 标签页
 # --------------------------------------------------------------------------- #
-st.title("三高知识智能问答平台")
-st.caption("基于图增强检索生成（GraphRAG）的特定领域医学问答系统")
+render_app_header()
 
 tab_chat, tab_graph, tab_ingest, tab_eval = st.tabs(
-    ["💬 智能问答", "🕸️ 知识图谱", "📚 知识录入", "📊 系统评测"]
+    ["问答", "图谱", "录入", "评测"]
 )
 
 with tab_chat:

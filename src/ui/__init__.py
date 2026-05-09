@@ -9,10 +9,11 @@ from src.ui.chat_tab import render_chat_tab
 from src.ui.graph_tab import render_graph_tab
 from src.ui.ingest_tab import render_ingest_tab
 from src.ui.eval_tab import render_eval_tab
-from src.ui.theme import apply_theme
+from src.ui.theme import apply_theme, render_app_header
 
 __all__ = [
     "apply_theme",
+    "render_app_header",
     "render_typewriter",
     "render_knowledge_graph",
     "render_sidebar",

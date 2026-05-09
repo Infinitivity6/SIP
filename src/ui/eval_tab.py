@@ -9,34 +9,36 @@ import pandas as pd
 import streamlit as st
 
 from src.evaluator import evaluate, load_test_set, save_report
+from src.ui.theme import render_section
 
 
 def _color_accuracy(val):
     """根据数值返回颜色样式（绿/黄/红）。"""
     if isinstance(val, (int, float)):
         if val >= 0.8:
-            return "background-color: #065f46; color: #d1fae5"
+            return "background-color: #2f6f59; color: #f0eadc"
         elif val >= 0.5:
-            return "background-color: #7a6a00; color: #fef3c7"
+            return "background-color: #74552a; color: #f0eadc"
         else:
-            return "background-color: #7f1d1d; color: #fecaca"
+            return "background-color: #71332f; color: #f0eadc"
     return ""
 
 
 def _metric_delta(val: float) -> str:
     """根据指标值返回带颜色的 delta 标记。"""
     if val >= 0.8:
-        return "🟢"
+        return "优秀"
     elif val >= 0.5:
-        return "🟡"
-    return "🔴"
+        return "可用"
+    return "待优化"
 
 
 def render_eval_tab() -> None:
-    st.markdown("### 📊 自动化评测")
-    st.caption(
+    render_section(
+        "自动化评测",
         "评测维度：检索召回率 · 生成准确率 · 关键词覆盖率 · 平均响应时间。"
-        "测试集覆盖 8 个意图类别，共 26 道题。"
+        "测试集覆盖 8 个意图类别，共 26 道题。",
+        "Evaluation",
     )
 
     try:
@@ -60,7 +62,7 @@ def render_eval_tab() -> None:
         st.write(
             f"已加载 **{len(cases)}** 道测试题，覆盖 **{len(cat_counts)}** 个类别。"
         )
-        with st.expander("📋 查看测试题样例与分布", expanded=False):
+        with st.expander("查看测试题样例与分布", expanded=False):
             c1, c2 = st.columns([3, 2])
             with c1:
                 st.json([asdict(c) for c in cases[:3]])
@@ -69,7 +71,7 @@ def render_eval_tab() -> None:
     with eval_col2:
         st.markdown("")
         st.markdown("")
-        run_eval = st.button("⚡ 一键跑全套评测", type="primary", width="stretch")
+        run_eval = st.button("一键跑全套评测", type="primary", width="stretch")
 
     if run_eval and cases:
         progress = st.progress(0.0)
@@ -95,7 +97,7 @@ def render_eval_tab() -> None:
             results, summary = evaluate(cases, progress_cb=_cb)
         progress.progress(1.0)
 
-        st.success("✅ 评测完毕！")
+        st.success("评测完毕")
 
         # ── 四维指标卡片（带颜色标记） ──
         m1, m2, m3, m4 = st.columns(4)
@@ -106,35 +108,35 @@ def render_eval_tab() -> None:
 
         with m1:
             st.metric(
-                "📈 平均准确率",
+                "平均准确率",
                 f"{acc * 100:.1f}%",
                 delta=_metric_delta(acc),
                 delta_color="off",
             )
         with m2:
             st.metric(
-                "🎯 平均召回率",
+                "平均召回率",
                 f"{rec * 100:.1f}%",
                 delta=_metric_delta(rec),
                 delta_color="off",
             )
         with m3:
             st.metric(
-                "📚 平均覆盖率",
+                "平均覆盖率",
                 f"{cov * 100:.1f}%",
                 delta=_metric_delta(cov),
                 delta_color="off",
             )
         with m4:
             st.metric(
-                "⏱️ 平均延迟",
+                "平均延迟",
                 f"{lat:.2f}s",
-                delta="⚡" if lat < 5 else ("🐢" if lat > 10 else "⏱️"),
+                delta="较快" if lat < 5 else ("偏慢" if lat > 10 else "正常"),
                 delta_color="off",
             )
 
         # ── 各类别表现 ──
-        st.markdown("#### 📂 各类别表现")
+        st.markdown("#### 各类别表现")
         cat_rows = [
             {"类别": cat, **stats} for cat, stats in summary.by_category.items()
         ]
@@ -148,7 +150,7 @@ def render_eval_tab() -> None:
                 st.bar_chart(chart_data, width="stretch")
 
         # ── 单题详情（带颜色标注） ──
-        st.markdown("#### 🔬 单题详情")
+        st.markdown("#### 单题详情")
         detail_df = pd.DataFrame(
             [
                 {
@@ -176,13 +178,13 @@ def render_eval_tab() -> None:
 
         # ── 报告下载 ──
         report_path = save_report(results, summary)
-        st.info(f"💾 报告已保存到：`{report_path}`")
+        st.info(f"报告已保存到：`{report_path}`")
 
         dl_col1, dl_col2 = st.columns(2)
         with dl_col1:
             with open(report_path, "rb") as f:
                 st.download_button(
-                    "⬇️ 下载评测报告 JSON",
+                    "下载评测报告 JSON",
                     data=f.read(),
                     file_name=os.path.basename(report_path),
                     mime="application/json",
@@ -192,7 +194,7 @@ def render_eval_tab() -> None:
             csv_buf = _io.StringIO()
             detail_df.to_csv(csv_buf, index=False, encoding="utf-8-sig")
             st.download_button(
-                "📥 导出结果 CSV",
+                "导出结果 CSV",
                 data=csv_buf.getvalue(),
                 file_name=f"eval_{report_path.split('_')[-1].replace('.json', '.csv')}",
                 mime="text/csv",
