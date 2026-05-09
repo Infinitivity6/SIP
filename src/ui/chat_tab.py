@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import time
+from html import escape
 
 import streamlit as st
 
@@ -40,27 +41,15 @@ def _render_sources(sources: dict) -> None:
 
     st.divider()
 
-    st.markdown(
-        '<div style="display:flex;align-items:center;gap:0.35rem;margin-bottom:0.4rem;">'
-        '<span style="font-size:0.9rem;">📖</span>'
-        '<span style="font-weight:600;font-size:0.85rem;opacity:0.7;">参考来源</span>'
-        '</div>',
-        unsafe_allow_html=True,
-    )
+    st.markdown('<div class="sip-source-title">参考来源</div>', unsafe_allow_html=True)
 
     if refs:
         ref_lines = []
         for idx, r in enumerate(refs, 1):
             fname = r.get("file_path", "unknown") if isinstance(r, dict) else str(r)
             count = r.get("count") if isinstance(r, dict) else None
-            extra = (
-                f' <span style="opacity:0.45;font-size:0.78rem;">'
-                f'（引用 {count} 次）</span>'
-                if count else ""
-            )
-            ref_lines.append(
-                f'{idx}. <code style="font-size:0.8rem;">{fname}</code>{extra}'
-            )
+            extra = f"（引用 {count} 次）" if count else ""
+            ref_lines.append(f"{idx}. `{fname}` {extra}".rstrip())
         st.markdown("\n".join(ref_lines))
 
     if chk or ent_cnt or rel_cnt:
@@ -89,12 +78,10 @@ def _render_sources(sources: dict) -> None:
                     preview, truncated = clean_chunk_preview(text)
                     header = f"**{i}. {fname}**" if fname else f"**{i}.**"
                     st.markdown(f"{header}")
-                    st.html(
-                        f"<blockquote style='opacity:0.78;margin:0 0 0.4rem 0;"
-                        f"padding:0.3rem 0.9rem;border-left:3px solid #34d399;"
-                        f"border-radius:0 6px 6px 0;"
-                        f"background:rgba(16,185,129,0.04);'>"
-                        f"{preview}{'…' if truncated else ''}</blockquote>"
+                    quote = f"{preview}{'…' if truncated else ''}"
+                    st.markdown(
+                        f'<blockquote class="sip-quote">{escape(quote)}</blockquote>',
+                        unsafe_allow_html=True,
                     )
             if ent_cnt:
                 st.markdown("**命中实体**")
@@ -217,13 +204,8 @@ def render_chat_tab() -> None:
 
     # ── 首次加载：欢迎区 + 快捷提问 ──
     if not st.session_state.get("chat_started"):
-        st.markdown("<div style='height:6vh;'></div>", unsafe_allow_html=True)
-
-        st.markdown(
-            '<p style="font-size:0.85rem;opacity:0.55;margin-bottom:0.4rem;">'
-            '💡 试试这些问题：</p>',
-            unsafe_allow_html=True,
-        )
+        st.markdown("")
+        st.markdown('<div class="sip-prompt-label">💡 试试这些问题</div>', unsafe_allow_html=True)
         chip_cols = st.columns(3)
         for i, (icon, question) in enumerate(_SUGGESTION_CHIPS):
             with chip_cols[i % 3]:
@@ -237,7 +219,7 @@ def render_chat_tab() -> None:
                     st.session_state._pending_question = question
                     st.rerun()
 
-        st.markdown("<div style='height:3vh;'></div>", unsafe_allow_html=True)
+        st.markdown("")
 
     # ── 消息历史 ──
     for msg in st.session_state.messages:

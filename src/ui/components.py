@@ -32,7 +32,7 @@ def render_typewriter(placeholder, text: str, chunk: int = 4, delay: float = 0.0
 # --------------------------------------------------------------------------- #
 # 知识图谱 pyvis 渲染
 # --------------------------------------------------------------------------- #
-def render_knowledge_graph(height: str = "640px") -> None:
+def render_knowledge_graph(height: str = "640px", show_metrics: bool = True) -> None:
     graph_path = os.path.join(config.WORKING_DIR, "graph_chunk_entity_relation.graphml")
     if not os.path.exists(graph_path):
         st.info("💡 暂无图谱数据。请先在「知识录入」页面录入文献。")
@@ -48,13 +48,12 @@ def render_knowledge_graph(height: str = "640px") -> None:
         st.warning("⚠️ 图谱中没有节点，请先录入有效文献。")
         return
 
-    # 图谱统计指标
-    col1, col2, col3 = st.columns(3)
-    col1.metric("🧩 实体数量", graph.number_of_nodes())
-    col2.metric("🔗 关系数量", graph.number_of_edges())
-    col3.metric("📐 图密度", f"{nx.density(graph):.4f}")
-
-    st.divider()
+    if show_metrics:
+        col1, col2, col3 = st.columns(3)
+        col1.metric("🧩 实体数量", graph.number_of_nodes())
+        col2.metric("🔗 关系数量", graph.number_of_edges())
+        col3.metric("📐 图密度", f"{nx.density(graph):.4f}")
+        st.divider()
 
     net = Network(
         height=height,

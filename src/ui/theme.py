@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 # ── 设计令牌：色彩系统 ──────────────────────────────────────────────
 _COLORS = {
@@ -52,8 +53,19 @@ body, .stApp {
     -apple-system, BlinkMacSystemFont, sans-serif !important;
   background:
     radial-gradient(circle at 12% -10%, rgba(16,185,129,0.12), transparent 24rem),
-    radial-gradient(circle at 92% 8%, rgba(59,130,246,0.10), transparent 22rem),
+    radial-gradient(circle at 88% 2%, rgba(59,130,246,0.045), transparent 30rem),
     #0e1117 !important;
+}
+
+section[data-testid="stMain"] {
+  background:
+    linear-gradient(90deg, rgba(14,17,23,0.98), rgba(14,17,23,0.94)),
+    #0e1117 !important;
+}
+
+section[data-testid="stMain"] .block-container {
+  max-width: 1360px;
+  padding-top: 0.9rem;
 }
 
 /* ============================================================
@@ -73,22 +85,28 @@ h1 {
    2. 标签页导航
    ============================================================ */
 section[data-testid="stTabs"] {
-  margin-top: 0.9rem;
-  padding: 0.35rem 0.35rem 0;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px 14px 0 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
-  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  margin-top: 1rem;
+  padding: 0.45rem 0.5rem 0;
+  border: 1px solid rgba(16,185,129,0.16);
+  border-radius: 16px 16px 0 0;
+  background:
+    linear-gradient(135deg, rgba(16,185,129,0.10), rgba(59,130,246,0.055)),
+    rgba(255,255,255,0.026);
+  box-shadow: 0 16px 38px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+section[data-testid="stTabs"] div[data-baseweb="tab-list"] {
+  gap: 0.35rem;
 }
 section[data-testid="stTabs"] button[data-baseweb="tab"] {
-  font-size: 1.04rem;
-  font-weight: 750;
-  padding: 0.82rem 1.55rem;
-  min-height: 3.35rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  padding: 0.9rem 1.75rem;
+  min-height: 3.7rem;
   border-radius: 12px 12px 0 0;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.075);
   margin-right: 0.25rem;
   transition: all 0.2s ease;
+  background: rgba(255,255,255,0.035);
 }
 section[data-testid="stTabs"] button[data-baseweb="tab"]:hover {
   background: rgba(16, 185, 129, 0.12);
@@ -241,10 +259,11 @@ hr {
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
 }
 button[title^="点击提问"] {
-  min-height: 3rem !important;
+  min-height: 3.25rem !important;
   white-space: normal !important;
-  background: rgba(16,185,129,0.075) !important;
-  border-color: rgba(16,185,129,0.18) !important;
+  background: linear-gradient(135deg, rgba(16,185,129,0.11), rgba(59,130,246,0.055)) !important;
+  border-color: rgba(16,185,129,0.22) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035);
 }
 button[title^="点击提问"]:hover {
   background: rgba(16,185,129,0.15) !important;
@@ -304,14 +323,44 @@ button[title^="点击提问"]:hover {
    ============================================================ */
 .sip-steps {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.8rem;
   justify-content: center;
-  opacity: 0.4;
-  font-size: 0.78rem;
-  padding: 0.5rem 0;
+  align-items: center;
+  font-size: 0.88rem;
+  padding: 0.95rem 0 0.4rem;
   flex-wrap: wrap;
 }
-.sip-steps span { white-space: nowrap; }
+.sip-steps__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  border: 1px solid rgba(16,185,129,0.24);
+  background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(59,130,246,0.06));
+  border-radius: 999px;
+  padding: 0.48rem 0.82rem;
+  color: rgba(255,255,255,0.88);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.sip-steps__item strong {
+  font-weight: 800;
+  color: var(--medical-200);
+}
+.sip-steps__arrow {
+  color: var(--medical-400);
+  opacity: 0.78;
+  font-weight: 800;
+  transform: translateY(-1px);
+}
+@media (max-width: 760px) {
+  .sip-steps {
+    justify-content: flex-start;
+  }
+  .sip-steps__arrow {
+    display: none;
+  }
+}
 
 /* ============================================================
    16. 脉冲动画
@@ -350,11 +399,19 @@ section[data-testid="stMain"] [data-testid="stChatMessage"] {
   border: 1px solid rgba(255,255,255,0.055);
   background: rgba(255,255,255,0.026);
 }
+section[data-testid="stMain"] [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
+  border-color: rgba(59,130,246,0.16);
+  background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(16,185,129,0.045));
+}
+section[data-testid="stMain"] [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) {
+  border-color: rgba(16,185,129,0.12);
+  background: rgba(255,255,255,0.03);
+}
 section[data-testid="stMain"] [data-testid="stChatInput"] {
-  border: 1px solid rgba(16,185,129,0.26);
-  border-radius: 14px;
-  background: rgba(14,17,23,0.95);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.28), 0 0 0 1px rgba(59,130,246,0.08);
+  border: 1px solid rgba(16,185,129,0.30);
+  border-radius: 16px;
+  background: rgba(12,16,23,0.96);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.32), 0 0 0 1px rgba(59,130,246,0.10);
 }
 section[data-testid="stMain"] [data-testid="stChatInput"] textarea {
   background: transparent !important;
@@ -363,6 +420,84 @@ section[data-testid="stMain"] [data-testid="stChatInput"] textarea {
 }
 """
 
+_SIDEBAR_DEFAULT_OPEN_HTML = """\
+<script>
+(function () {
+  var USER_COLLAPSED_KEY = "sip_sidebar_user_collapsed";
+  var autoOpening = false;
+  var seenExpanded = false;
+  try {
+    window.sessionStorage.removeItem("sip_sidebar_default_open_checked");
+  } catch (e) {}
+
+  function getDoc() {
+    return window.parent && window.parent.document;
+  }
+
+  function sidebarWidth(doc) {
+    var sidebar = doc.querySelector('section[data-testid="stSidebar"]');
+    return sidebar ? sidebar.getBoundingClientRect().width : 0;
+  }
+
+  function openIfNeeded() {
+    var doc = window.parent && window.parent.document;
+    if (!doc) return false;
+
+    var width = sidebarWidth(doc);
+    if (width >= 160) {
+      seenExpanded = true;
+      try {
+        window.sessionStorage.removeItem(USER_COLLAPSED_KEY);
+      } catch (e) {}
+      return true;
+    }
+
+    try {
+      if (window.sessionStorage.getItem(USER_COLLAPSED_KEY) === "1") return true;
+    } catch (e) {}
+
+    var openButton = doc.querySelector('button[data-testid="collapsedControl"]');
+    if (openButton) {
+      autoOpening = true;
+      openButton.click();
+      window.setTimeout(function () { autoOpening = false; }, 500);
+      return true;
+    }
+
+    return false;
+  }
+
+  function monitorUserCollapse() {
+    var doc = getDoc();
+    if (!doc) return;
+    var width = sidebarWidth(doc);
+
+    if (width >= 160) {
+      seenExpanded = true;
+      try {
+        window.sessionStorage.removeItem(USER_COLLAPSED_KEY);
+      } catch (e) {}
+      return;
+    }
+
+    if (seenExpanded && width < 120 && !autoOpening) {
+      try {
+        window.sessionStorage.setItem(USER_COLLAPSED_KEY, "1");
+      } catch (e) {}
+    }
+  }
+
+  var openAttempts = 0;
+  var openTimer = window.setInterval(function () {
+    openAttempts += 1;
+    var done = openIfNeeded();
+    if (done || openAttempts >= 40) window.clearInterval(openTimer);
+  }, 150);
+
+  window.setInterval(monitorUserCollapse, 400);
+})();
+</script>
+"""
 
 def apply_theme(*, include_chat_layout: bool = False) -> None:
     """注入全局 CSS 主题。
@@ -376,3 +511,4 @@ def apply_theme(*, include_chat_layout: bool = False) -> None:
     if include_chat_layout:
         css += _CHAT_CSS
     st.html(f"<style>{css}</style>")
+    components.html(_SIDEBAR_DEFAULT_OPEN_HTML, height=0, width=0)

@@ -1,8 +1,12 @@
 """知识图谱标签页：pyvis 交互式实体关系可视化。"""
 from __future__ import annotations
 
+import os
+
+import networkx as nx
 import streamlit as st
 
+import config
 from src.ui.components import render_knowledge_graph
 
 
@@ -29,8 +33,20 @@ def render_graph_tab() -> None:
             label_visibility="collapsed",
         )
 
+    graph_path = os.path.join(config.WORKING_DIR, "graph_chunk_entity_relation.graphml")
+    if os.path.exists(graph_path):
+        try:
+            graph = nx.read_graphml(graph_path)
+            s1, s2, s3, s4 = st.columns(4)
+            s1.metric("实体", graph.number_of_nodes())
+            s2.metric("关系", graph.number_of_edges())
+            s3.metric("图密度", f"{nx.density(graph):.4f}")
+            s4.metric("视图高度", height_choice)
+        except Exception:
+            pass
+
     st.divider()
-    render_knowledge_graph(height=height_choice)
+    render_knowledge_graph(height=height_choice, show_metrics=False)
 
     st.caption(
         "节点颜色：🟢 高连接度（>3）  🔵 中等连接（2-3）  ⚪ 低连接（1）。"

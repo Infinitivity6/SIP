@@ -135,12 +135,17 @@ def render_ingest_tab() -> None:
     st.divider()
     st.markdown(
         '<div class="sip-steps">'
-        '<span>📄 文件上传</span><span>→</span>'
-        '<span>🧹 清洗去重</span><span>→</span>'
-        '<span>✂️ 文本切片</span><span>→</span>'
-        '<span>🧮 向量化</span><span>→</span>'
-        '<span>🕸️ 图谱抽取</span><span>→</span>'
-        '<span>✅ 可检索</span>'
+        '<span class="sip-steps__item">📄 <strong>文件上传</strong></span>'
+        '<span class="sip-steps__arrow">→</span>'
+        '<span class="sip-steps__item">🧹 <strong>清洗去重</strong></span>'
+        '<span class="sip-steps__arrow">→</span>'
+        '<span class="sip-steps__item">✂️ <strong>文本切片</strong></span>'
+        '<span class="sip-steps__arrow">→</span>'
+        '<span class="sip-steps__item">🧮 <strong>向量化</strong></span>'
+        '<span class="sip-steps__arrow">→</span>'
+        '<span class="sip-steps__item">🕸️ <strong>图谱抽取</strong></span>'
+        '<span class="sip-steps__arrow">→</span>'
+        '<span class="sip-steps__item">✅ <strong>可检索</strong></span>'
         '</div>',
         unsafe_allow_html=True,
     )
