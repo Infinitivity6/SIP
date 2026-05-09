@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "raw_text": "肖申克的救赎 / 月黑高飞(港)  /  刺激1995(台)\n导演: 弗兰克·德拉邦特 Frank Darabont 主演: 蒂姆·罗宾斯 Tim Robbins /...\n1994 / 美国 / 犯罪 剧情\n评分：9.7",
+    "token_A": {
+      "input": 350,
+      "output": 117,
+      "total": 467
+    },
+    "token_B": {
+      "input": 158,
+      "output": 117,
+      "total": 275
+    },
+    "result_A": {
+      "title": "肖申克的救赎",
+      "title_foreign": "月黑高飞 / 刺激1995",
+      "director": "弗兰克·德拉邦特 Frank Darabont",
+      "cast": [
+        "蒂姆·罗宾斯 Tim Robbins"
+      ],
+      "year": "1994",
+      "country": "美国",
+      "genres": [
+        "犯罪",
+        "剧情"
+      ],
+      "rating": 9.7,
+      "rating_count": 0,
+      "quote": ""
+    },
+    "result_B": {
+      "title": "肖申克的救赎",
+      "title_foreign": [
+        "月黑高飞(港)",
+        "刺激1995(台)"
+      ],
+      "director": "弗兰克·德拉邦特 Frank Darabont",
+      "cast": [
+        "蒂姆·罗宾斯 Tim Robbins"
+      ],
+      "year": 1994,
+      "country": "美国",
+      "genres": [
+        "犯罪",
+        "剧情"
+      ],
+      "rating": 9.7,
+      "rating_count": null,
+      "quote": null
+    }
+  },
+  {
+    "id": 2,
+    "raw_text": "霸王别姬 / 再见，我的妾  /  Farewell My Concubine\n导演: 陈凯歌 Kaige Chen 主演: 张国荣 Leslie Cheung / 张丰毅 Fengyi Zha...\n1993 / 中国大陆 中国香港 / 剧情 爱情 同性\n评分：9.6",
+    "token_A": {
+      "input": 345,
+      "output": 121,
+      "total": 466
+    },
+    "token_B": {
+      "input": 153,
+      "output": 118,
+      "total": 271
+    },
+    "result_A": {
+      "title": "霸王别姬",
+      "title_foreign": "再见，我的妾 / Farewell My Concubine",
+      "director": "陈凯歌 Kaige Chen",
+      "cast": [
+        "张国荣 Leslie Cheung",
+        "张丰毅 Fengyi Zha"
+      ],
+      "year": "1993",
+      "country": "中国大陆 中国香港",
+      "genres": [
+        "剧情",
+        "爱情",
+        "同性"
+      ],
+      "rating": 9.6,
+      "rating_count": null,
+      "quote": ""
+    },
+    "result_B": {
+      "title": "霸王别姬",
+      "title_foreign": "再见，我的妾 / Farewell My Concubine",
+      "director": "陈凯歌 Kaige Chen",
+      "cast": [
+        "张国荣 Leslie Cheung",
+        "张丰毅 Fengyi Zha"
+      ],
+      "year": 1993,
+      "country": "中国大陆 中国香港",
+      "genres": [
+        "剧情",
+        "爱情",
+        "同性"
+      ],
+      "rating": 9.6,
+      "rating_count": null,
+      "quote": null
+    }
+  }
+]

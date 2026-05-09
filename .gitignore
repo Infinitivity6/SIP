@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# Project
+rag_storage/
+lightrag.log
+
+# OS
+.DS_Store
+Thumbs.db

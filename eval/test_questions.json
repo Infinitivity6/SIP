@@ -1,0 +1,210 @@
+[
+  {
+    "id": "Q01",
+    "category": "definition",
+    "question": "请问什么是高血压？",
+    "must_have": ["高血压", "动脉血压"],
+    "nice_to_have": ["心脑血管", "140", "90"],
+    "reference_answer": "高血压是指以体循环动脉血压持续升高为主要特征的临床综合征，SBP≥140mmHg或DBP≥90mmHg即可诊断。"
+  },
+  {
+    "id": "Q02",
+    "category": "definition",
+    "question": "高血糖与糖尿病有什么关系？",
+    "must_have": ["高血糖", "糖尿病"],
+    "nice_to_have": ["葡萄糖", "空腹", "糖化"],
+    "reference_answer": "高血糖是血液中葡萄糖浓度高于正常水平，当空腹血糖≥7.0mmol/L或HbA1c≥6.5%可诊断为糖尿病。"
+  },
+  {
+    "id": "Q03",
+    "category": "definition",
+    "question": "什么是高血脂？有哪些类型？",
+    "must_have": ["高血脂", "胆固醇", "甘油三酯"],
+    "nice_to_have": ["LDL", "HDL", "动脉粥样硬化"],
+    "reference_answer": "高血脂是指血浆中胆固醇和/或甘油三酯水平升高，包括高胆固醇血症、高甘油三酯血症、混合型高脂血症等类型。"
+  },
+  {
+    "id": "Q04",
+    "category": "diet",
+    "question": "高血压患者饮食上要注意什么？",
+    "must_have": ["低盐", "5克"],
+    "nice_to_have": ["腌制", "DASH", "钾"],
+    "reference_answer": "高血压患者应低盐低脂饮食，每天食盐不超过5克，避免腌制食品，多吃富含钾的蔬菜水果。"
+  },
+  {
+    "id": "Q05",
+    "category": "diet",
+    "question": "高血糖患者主食可以怎么吃？",
+    "must_have": ["粗细搭配", "膳食纤维"],
+    "nice_to_have": ["燕麦", "糙米", "GI"],
+    "reference_answer": "高血糖患者主食应粗细搭配，选择燕麦、糙米等低GI主食，增加膳食纤维摄入至每日25-30g。"
+  },
+  {
+    "id": "Q06",
+    "category": "diet",
+    "question": "高血脂患者哪些食物最好少吃？",
+    "must_have": ["动物内脏", "油炸"],
+    "nice_to_have": ["饱和脂肪", "反式脂肪", "深海鱼"],
+    "reference_answer": "高血脂患者应少吃动物内脏、油炸食品，避免饱和脂肪和反式脂肪，多吃深海鱼类。"
+  },
+  {
+    "id": "Q07",
+    "category": "diet",
+    "question": "三高人群推荐的食用油有哪些？每日用油量多少？",
+    "must_have": ["橄榄油", "25"],
+    "nice_to_have": ["茶油", "菜籽油", "不饱和"],
+    "reference_answer": "推荐橄榄油、茶籽油、菜籽油等植物油，每天用油量25-30克。"
+  },
+  {
+    "id": "Q08",
+    "category": "medicine",
+    "question": "高血压常见的降压药物有哪些大类？",
+    "must_have": ["钙通道阻滞剂", "ACE"],
+    "nice_to_have": ["ARB", "利尿剂", "β-受体阻滞剂"],
+    "reference_answer": "常用降压药包括钙通道阻滞剂、ACEI、ARB、利尿剂和β-受体阻滞剂五大类。"
+  },
+  {
+    "id": "Q09",
+    "category": "medicine",
+    "question": "合并糖尿病的高血压患者推荐用什么药？",
+    "must_have": ["ACEI", "肾"],
+    "nice_to_have": ["依那普利", "培哚普利", "靶器官"],
+    "reference_answer": "合并糖尿病的高血压患者推荐使用ACEI（如依那普利、培哚普利），具有保护肾脏的作用。"
+  },
+  {
+    "id": "Q10",
+    "category": "medicine",
+    "question": "对ACEI不耐受时可以换什么药？",
+    "must_have": ["ARB"],
+    "nice_to_have": ["缬沙坦", "厄贝沙坦", "咳嗽"],
+    "reference_answer": "对ACEI不耐受（如出现干咳）的患者可选择ARB类药物（缬沙坦、厄贝沙坦），疗效相当且副作用少。"
+  },
+  {
+    "id": "Q11",
+    "category": "medicine",
+    "question": "顽固性高血压可以怎么治疗？",
+    "must_have": ["利尿剂", "联合"],
+    "nice_to_have": ["氢氯噻嗪", "CCB"],
+    "reference_answer": "顽固性高血压可在医生指导下联合用药，如CCB+ACEI/ARB+利尿剂（氢氯噻嗪）三联治疗。"
+  },
+  {
+    "id": "Q12",
+    "category": "medicine",
+    "question": "他汀类药物有哪些？主要不良反应是什么？",
+    "must_have": ["他汀", "阿托伐他汀"],
+    "nice_to_have": ["瑞舒伐他汀", "肌肉", "横纹肌"],
+    "reference_answer": "常用他汀包括阿托伐他汀和瑞舒伐他汀，主要不良反应为肝功能异常和肌肉疼痛，严重者罕见横纹肌溶解。"
+  },
+  {
+    "id": "Q13",
+    "category": "medicine",
+    "question": "SGLT-2抑制剂是如何降糖的？有什么额外获益？",
+    "must_have": ["SGLT-2", "尿液"],
+    "nice_to_have": ["达格列净", "心肾", "恩格列净"],
+    "reference_answer": "SGLT-2抑制剂（达格列净、恩格列净）通过抑制肾脏SGLT-2受体使多余糖分从尿液排出，同时有心血管和肾脏保护作用。"
+  },
+  {
+    "id": "Q14",
+    "category": "exercise",
+    "question": "三高人群每周应该运动多少次？推荐什么类型的运动？",
+    "must_have": ["有氧", "5"],
+    "nice_to_have": ["中等强度", "抗阻", "30"],
+    "reference_answer": "三高人群每周至少运动5天，每次30-60分钟中等强度有氧运动（快走、慢跑、游泳），每周2-3次抗阻训练。"
+  },
+  {
+    "id": "Q15",
+    "category": "exercise",
+    "question": "高血压患者运动时有哪些注意事项？",
+    "must_have": ["憋气", "热身"],
+    "nice_to_have": ["血压", "Valsalva", "头晕"],
+    "reference_answer": "高血压患者运动时应避免憋气用力（Valsalva动作），运动前充分热身5-10分钟，如出现胸闷头晕应立即停止。"
+  },
+  {
+    "id": "Q16",
+    "category": "exercise",
+    "question": "糖尿病患者运动前后需要注意什么？",
+    "must_have": ["血糖", "监测"],
+    "nice_to_have": ["低血糖", "5.6", "酮症"],
+    "reference_answer": "糖尿病患者运动前后应监测血糖，血糖<5.6mmol/L时需先进食少量碳水化合物，血糖>16.7mmol/L且合并酮症时禁止运动。"
+  },
+  {
+    "id": "Q17",
+    "category": "monitor",
+    "question": "高血压的诊断标准是什么？血压正常值是多少？",
+    "must_have": ["140", "90", "mmHg"],
+    "nice_to_have": ["正常高值", "120", "80"],
+    "reference_answer": "诊室血压SBP≥140mmHg和/或DBP≥90mmHg可诊断高血压。正常血压为<120/80mmHg。"
+  },
+  {
+    "id": "Q18",
+    "category": "monitor",
+    "question": "糖尿病患者需要定期检查哪些指标？",
+    "must_have": ["糖化血红蛋白", "血糖"],
+    "nice_to_have": ["HbA1c", "空腹", "餐后"],
+    "reference_answer": "糖尿病患者需定期监测空腹和餐后血糖、每3-6个月查一次糖化血红蛋白（HbA1c），目标<7.0%。"
+  },
+  {
+    "id": "Q19",
+    "category": "monitor",
+    "question": "高血脂患者应该多久检查一次血脂？血脂检查包含哪些项目？",
+    "must_have": ["血脂", "胆固醇"],
+    "nice_to_have": ["甘油三酯", "LDL", "3-6个月"],
+    "reference_answer": "高血脂患者每3-6个月检查一次血脂四项（TC、TG、LDL-C、HDL-C）。"
+  },
+  {
+    "id": "Q20",
+    "category": "complication",
+    "question": "高血压可能引起什么严重并发症？",
+    "must_have": ["心脑血管", "脑卒中"],
+    "nice_to_have": ["心肌梗死", "肾病", "视网膜"],
+    "reference_answer": "高血压可导致脑卒中、冠心病和心肌梗死、高血压性肾病、眼底病变等多种严重并发症。"
+  },
+  {
+    "id": "Q21",
+    "category": "complication",
+    "question": "高血脂为什么需要重视？",
+    "must_have": ["动脉粥样硬化"],
+    "nice_to_have": ["ASCVD", "心血管", "LDL"],
+    "reference_answer": "高血脂是动脉粥样硬化性心血管疾病（ASCVD）最重要的危险因素，LDL-C升高会加速动脉粥样硬化形成。"
+  },
+  {
+    "id": "Q22",
+    "category": "complication",
+    "question": "糖尿病的慢性并发症有哪些？",
+    "must_have": ["肾病", "视网膜病变"],
+    "nice_to_have": ["神经病变", "糖尿病足", "心血管"],
+    "reference_answer": "糖尿病的慢性并发症包括糖尿病肾病、视网膜病变、周围神经病变、糖尿病足和心血管疾病等。"
+  },
+  {
+    "id": "Q23",
+    "category": "lifestyle",
+    "question": "三高人群在日常生活中该怎么做？",
+    "must_have": ["规律作息", "运动", "戒烟"],
+    "nice_to_have": ["监测", "睡眠", "减压"],
+    "reference_answer": "三高人群应保持规律作息（睡眠7-8小时）、适量运动、戒烟限酒、保持心理平衡，定期监测各项指标。"
+  },
+  {
+    "id": "Q24",
+    "category": "lifestyle",
+    "question": "吸烟和饮酒对三高有什么影响？",
+    "must_have": ["戒烟", "饮酒"],
+    "nice_to_have": ["尼古丁", "血管", "甘油三酯"],
+    "reference_answer": "吸烟收缩血管升高血压、加速动脉粥样硬化；饮酒升高血压和甘油三酯。三高人群应戒烟限酒，最好戒酒。"
+  },
+  {
+    "id": "Q25",
+    "category": "general",
+    "question": "三高之间有什么关系？为什么说三高互为危险因素？",
+    "must_have": ["胰岛素抵抗"],
+    "nice_to_have": ["代谢", "肥胖", "互为"],
+    "reference_answer": "三高常合并发生，共同以胰岛素抵抗为中心，通过代谢综合征相互关联，肥胖是共同危险因素。"
+  },
+  {
+    "id": "Q26",
+    "category": "general",
+    "question": "三高人群年度体检需要重点注意哪些方面的检查？",
+    "must_have": ["血压", "血糖", "血脂"],
+    "nice_to_have": ["心电图", "肾功能", "眼底"],
+    "reference_answer": "三高人群年度体检应重点关注血压、血糖、血脂、心电图、肝肾功能、尿微量白蛋白和眼底检查。"
+  }
+]
