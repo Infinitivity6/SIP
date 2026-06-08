@@ -1,0 +1,1681 @@
+{
+  "summary": {
+    "total": 26,
+    "avg_accuracy": 0.84,
+    "avg_recall": 0.984,
+    "avg_coverage": 0.706,
+    "avg_latency": 0.343,
+    "by_category": {
+      "definition": {
+        "count": 3,
+        "accuracy": 0.889,
+        "recall": 1.0,
+        "coverage": 0.689,
+        "latency": 0.55,
+        "judge_score": 0.9
+      },
+      "diet": {
+        "count": 4,
+        "accuracy": 0.875,
+        "recall": 1.0,
+        "coverage": 0.7,
+        "latency": 0.32,
+        "judge_score": 0.963
+      },
+      "medicine": {
+        "count": 6,
+        "accuracy": 1.0,
+        "recall": 1.0,
+        "coverage": 0.858,
+        "latency": 0.29,
+        "judge_score": 1.0
+      },
+      "exercise": {
+        "count": 3,
+        "accuracy": 0.833,
+        "recall": 1.0,
+        "coverage": 0.667,
+        "latency": 0.28,
+        "judge_score": 0.933
+      },
+      "monitor": {
+        "count": 3,
+        "accuracy": 1.0,
+        "recall": 1.0,
+        "coverage": 0.878,
+        "latency": 0.34,
+        "judge_score": 0.95
+      },
+      "complication": {
+        "count": 3,
+        "accuracy": 0.833,
+        "recall": 1.0,
+        "coverage": 0.567,
+        "latency": 0.38,
+        "judge_score": 0.95
+      },
+      "lifestyle": {
+        "count": 2,
+        "accuracy": 0.334,
+        "recall": 0.916,
+        "coverage": 0.334,
+        "latency": 0.28,
+        "judge_score": 0.6
+      },
+      "general": {
+        "count": 2,
+        "accuracy": 0.5,
+        "recall": 0.875,
+        "coverage": 0.666,
+        "latency": 0.33,
+        "judge_score": 0.765
+      }
+    },
+    "avg_judge_score": 0.915,
+    "avg_judge_correctness": 0.923,
+    "avg_judge_completeness": 0.877,
+    "avg_judge_faithfulness": 0.915,
+    "avg_judge_relevance": 0.992,
+    "avg_judge_safety": 0.992
+  },
+  "details": [
+    {
+      "id": "Q01",
+      "category": "definition",
+      "question": "请问什么是高血压？",
+      "intent": "definition",
+      "response": "**高血压是指以体循环动脉血压增高为主要特征的临床综合征**。\n\n- **病因**：高血压的病因复杂多样，但饮食因素尤为重要，患者应避免高盐和高脂肪食物，尤其是腌制食品如咸菜、腊肉等。\n- **高危人群**：高血压主要与不健康的饮食习惯和生活方式有关，特别是高盐和高脂肪饮食的人更容易患高血压。\n- **危害程度**：高血压可诱发心脑血管疾病，增加心脏和脑部的负担，长期控制不佳会增加心脏病和中风的风险。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.6,
+      "elapsed_sec": 1.05,
+      "must_hits": [
+        "高血压",
+        "动脉血压"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血压是指以体循环动脉血压持续升高为主要特征的临床综合征，SBP≥140mmHg或DBP≥90mmHg即可诊断。",
+      "judge_score": 0.85,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.6,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本正确，覆盖了高血压的定义和部分关键点，但未提及具体血压数值标准。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.85,
+          "correctness": 0.8,
+          "completeness": 0.6,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本正确，覆盖了高血压的定义和部分关键点，但未提及具体血压数值标准。",
+          "missing_points": [
+            "SBP≥140mmHg或DBP≥90mmHg的诊断标准"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 29.74,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 29.82
+    },
+    {
+      "id": "Q02",
+      "category": "definition",
+      "question": "高血糖与糖尿病有什么关系？",
+      "intent": "general",
+      "response": "高血糖是诊断糖尿病的重要标准之一。当空腹血糖≥7.0mmol/L或餐后2小时血糖≥11.1mmol/L或糖化血红蛋白（HbA1c）≥6.5%时，即可确诊为糖尿病。持续的高血糖状态会损害全身血管和神经，进而引发多种慢性并发症，包括心血管疾病、糖尿病肾病和糖尿病神经病变等。同时，严重的持续性高血糖也会增加发生急性并发症的风险，如糖尿病酮症酸中毒或高渗性高血糖状态。\n\n需要注意的是，高血糖并不总是意味着糖尿病的诊断，它也可以出现在糖尿病前期或某些暂时性高血糖的情况下。因此，高血糖患者应当严格控制游离糖摄入，推荐主食粗细搭配，多吃富含膳食纤维的食物，如燕麦、糙米，以帮助控制血糖水平。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.8,
+      "elapsed_sec": 0.31,
+      "must_hits": [
+        "高血糖",
+        "糖尿病"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血糖是血液中葡萄糖浓度高于正常水平，当空腹血糖≥7.0mmol/L或HbA1c≥6.5%可诊断为糖尿病。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答准确全面，符合检索上下文，无安全风险",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答准确全面，符合检索上下文，无安全风险",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 17.59,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 17.67
+    },
+    {
+      "id": "Q03",
+      "category": "definition",
+      "question": "什么是高血脂？有哪些类型？",
+      "intent": "definition",
+      "response": "**高血脂是指血脂水平过高**。这类情况会加速动脉粥样硬化的形成，导致心血管疾病的风险增加。高血脂并不是一个具体的疾病类型，而是包含多种血脂成分的异常升高，其中重要的一项指标是低密度脂蛋白胆固醇（LDL-C），该指标高则容易在动脉壁上形成斑块，促进动脉粥样硬化的发展。此外，高纯度鱼油制剂如二十碳五烯酸乙酯被用于降低三酰甘油（TG）水平，进一步减少高血脂患者的动脉粥样硬化性心血管疾病（ASCVD）风险。",
+      "context_recall": 1.0,
+      "answer_accuracy": 0.667,
+      "key_coverage": 0.667,
+      "elapsed_sec": 0.3,
+      "must_hits": [
+        "高血脂",
+        "胆固醇"
+      ],
+      "must_miss": [
+        "甘油三酯"
+      ],
+      "reference_answer": "高血脂是指血浆中胆固醇和/或甘油三酯水平升高，包括高胆固醇血症、高甘油三酯血症、混合型高脂血症等类型。",
+      "judge_score": 0.85,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.6,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本正确，但未完全覆盖高血脂的所有类型",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.85,
+          "correctness": 0.8,
+          "completeness": 0.6,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本正确，但未完全覆盖高血脂的所有类型",
+          "missing_points": [
+            "高胆固醇血症",
+            "高甘油三酯血症",
+            "混合型高脂血症"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.73,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.8
+    },
+    {
+      "id": "Q04",
+      "category": "diet",
+      "question": "高血压患者饮食上要注意什么？",
+      "intent": "diet",
+      "response": "**高血压患者在饮食上应注意以下几点：**\n\n- **推荐食物**：建议多吃燕麦、糙米等富含膳食纤维的食物。这些食物有助于控制体重和改善血脂状况。\n\n- **限制 / 禁忌食物**：应避免食用腌制食品如咸菜、腊肉等高盐食品。同时，需严格控制脂肪摄入，特别是饱和脂肪和反式脂肪。\n\n- **每日量化指标**：每天食盐摄入量不宜超过**5克**。\n\n**简短的食谱示例**：早餐可食用燕麦粥配低脂牛奶和新鲜水果，如苹果或柚子；午餐推荐糙米搭配蒸菜、鱼和非油炸的蔬菜；晚餐则可选择全麦面包和一份瘦肉（如鸡肉或鱼肉）。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 0.5,
+      "key_coverage": 0.4,
+      "elapsed_sec": 0.26,
+      "must_hits": [
+        "5克"
+      ],
+      "must_miss": [
+        "低盐"
+      ],
+      "reference_answer": "高血压患者应低盐低脂饮食，每天食盐不超过5克，避免腌制食品，多吃富含钾的蔬菜水果。",
+      "judge_score": 0.85,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.6,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本正确，覆盖了主要要点，但缺少DASH饮食和钾的补充。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.85,
+          "correctness": 0.8,
+          "completeness": 0.6,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本正确，覆盖了主要要点，但缺少DASH饮食和钾的补充。",
+          "missing_points": [
+            "DASH饮食",
+            "钾的补充"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.66,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.75
+    },
+    {
+      "id": "Q05",
+      "category": "diet",
+      "question": "高血糖患者主食可以怎么吃？",
+      "intent": "general",
+      "response": "高血糖患者在选择主食时，应注重膳食纤维的摄入，建议粗细搭配。以下是具体的饮食建议：\n\n- **粗粮类**：推荐燕麦、糙米、荞麦、全麦面包等低GI（血糖生成指数）主食。这些食物含有较高的膳食纤维，有助于延缓碳水化合物的吸收，改善餐后血糖。\n\n- **细粮类**：可以适当选择细粮，但应控制总热量和餐后血糖上升的程度。同时细粮与粗粮搭配，有助于血糖的稳定。\n\n每日膳食纤维摄入量应达到25到30克，可帮助延缓碳水化合物的吸收，降低餐后血糖。\n\n请严格按照以上建议进行饮食调整，并定期监测血糖水平，保证血糖的稳定控制。\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.34,
+      "must_hits": [
+        "粗细搭配",
+        "膳食纤维"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血糖患者主食应粗细搭配，选择燕麦、糙米等低GI主食，增加膳食纤维摄入至每日25-30g。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全符合参考答案和检索上下文，覆盖所有要点，无安全风险。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全符合参考答案和检索上下文，覆盖所有要点，无安全风险。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.88,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.95
+    },
+    {
+      "id": "Q06",
+      "category": "diet",
+      "question": "高血脂患者哪些食物最好少吃？",
+      "intent": "diet",
+      "response": "根据高血脂的防治指南，建议高血脂患者减少以下食物的摄入：\n\n- 动物内脏：如肝、肾等。\n- 油炸食品：如炸鸡、炸薯条等。\n\n这些食物通常含有较高的饱和脂肪和胆固醇，对血脂控制不利。相反，建议增加深海鱼类和新鲜蔬菜的摄入，以降低血脂水平。深海鱼类如三文鱼、鲭鱼等含有丰富的ω-3脂肪酸，有助于改善血脂状况。蔬菜则是富含膳食纤维的食物，有助于降低血液中的胆固醇水平。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）\n\n-  diabetes_guide.txt\n-  3high_data.txt",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.8,
+      "elapsed_sec": 0.29,
+      "must_hits": [
+        "动物内脏",
+        "油炸"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血脂患者应少吃动物内脏、油炸食品，避免饱和脂肪和反式脂肪，多吃深海鱼类。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全符合参考答案和检索上下文，无错误或危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全符合参考答案和检索上下文，无错误或危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.6,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.68
+    },
+    {
+      "id": "Q07",
+      "category": "diet",
+      "question": "三高人群推荐的食用油有哪些？每日用油量多少？",
+      "intent": "general",
+      "response": "三高人群推荐的食用油包括橄榄油、茶油和坚果油。这些油品属于健康脂肪来源，对维持心血管健康有帮助。\n\n建议每日用油量应控制在25克至30克之间，这是基于总的膳食脂肪摄入量的推荐量，以避免过多摄入饱和脂肪和反式脂肪。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.6,
+      "elapsed_sec": 0.4,
+      "must_hits": [
+        "橄榄油",
+        "25"
+      ],
+      "must_miss": [],
+      "reference_answer": "推荐橄榄油、茶籽油、菜籽油等植物油，每天用油量25-30克。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全符合参考答案和检索上下文，医学事实正确，无危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全符合参考答案和检索上下文，医学事实正确，无危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.38,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.07,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.45
+    },
+    {
+      "id": "Q08",
+      "category": "medicine",
+      "question": "高血压常见的降压药物有哪些大类？",
+      "intent": "medicine",
+      "response": "高血压常见的降压药物主要分为以下几大类：\n\n- **钙通道阻滞剂（CCB）**\n  - **代表药物**：硝苯地平、氨氯地平、非洛地平、拉西地平\n  - **适用人群**：降压效果强，尤其适用于老年人和单纯收缩期高血压患者\n  - **常见副作用**：头痛、面部潮红、踝部水肿、心悸\n  - **联合用药提示**：短效硝苯地平可能引起反射性心率增快，建议使用长效制剂\n\n- **血管紧张素转换酶抑制剂（ACEI）**\n  - **代表药物**：依那普利、培哚普利、贝那普利、卡托普利\n  - **适用人群**：具有靶器官保护作用（心、肾），特别适合合并糖尿病、心力衰竭、心肌梗死后的患者\n  - **常见副作用**：干咳（发生率5%-20%）、高钾血症、血管神经性水肿（罕见但严重）\n  - **联合用药提示**：禁忌症包括双侧肾动脉狭窄、妊娠、高钾血症\n\n- **血管紧张素受体拮抗剂（ARB）**\n  - **代表药物**：缬沙坦、厄贝沙坦、氯沙坦、坎地沙坦\n  - **适用人群**：与ACEI降压效果相当，但不引起干咳，耐受性更优\n  - **常见副作用**：不良反应和禁忌与ACEI类似\n  - **联合用药提示**：咳嗽发生率与安慰剂无差异\n\n- **利尿剂**\n  - **噻嗪类**：氢氯噻嗪、吲达帕胺\n  - **袢利尿剂**：呋塞米，用于肾功能不全或心衰患者\n  - **适用人群**：价格低廉，适合顽固性高血压、盐敏感性高血压和老年高血压\n  - **常见副作用**：低钾血症、高尿酸血症、糖脂代谢紊乱（大剂量时）\n\n- **β-受体阻滞剂**\n  - **代表药物**：美托洛尔、比索洛尔、卡维地洛（兼有α阻断作用）\n  - **适用人群**：特别适用于合并冠心病、心力衰竭、快速心律失常的高血压患者\n  - **常见副作用**：心动过缓、乏力、影响糖脂代谢、可能诱发支气管痉挛\n  - **联合用药提示**：一般不推荐作为无合并症高血压的一线治疗\n\n具体用药应在医生面诊后由医生开具处方。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "钙通道阻滞剂",
+        "ACE"
+      ],
+      "must_miss": [],
+      "reference_answer": "常用降压药包括钙通道阻滞剂、ACEI、ARB、利尿剂和β-受体阻滞剂五大类。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全覆盖了所有关键点，医学事实正确，且忠实于检索上下文。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全覆盖了所有关键点，医学事实正确，且忠实于检索上下文。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.84,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.92
+    },
+    {
+      "id": "Q09",
+      "category": "medicine",
+      "question": "合并糖尿病的高血压患者推荐用什么药？",
+      "intent": "medicine",
+      "response": "**高血压合并糖尿病患者推荐的药物包括：**\n\n- **血管紧张素转换酶抑制剂（ACEI）**，如依那普利、培哚普利、贝那普利和卡托普利。这些药物具有靶器官保护作用，适用于合并糖尿病和心力衰竭的患者。常见不良反应包括干咳，高钾血症和罕见的血管神经性水肿。该类药物不适用于双侧肾动脉狭窄、妊娠和高钾血症患者。\n\n- **血管紧张素受体拮抗剂（ARB）**，包括缬沙坦、厄贝沙坦、氯沙坦和坎地沙坦。这些药物不引起干咳，耐受性优于ACEI。在患有糖尿病的高血压患者中，ARB类药物被推荐作为一线药物使用。它们具有良好的心血管和肾脏保护作用。\n\n- **钙通道阻滞剂（CCB）**，如硝苯地平、氨氯地平、非洛地平、拉西地平。这类药物降压效果强，适用于老年人和单纯收缩期高血压的患者。长效制剂推荐用于治疗，以减少不良反应，如头痛、面部潮红、踝部水肿和心悸。\n\n- **必要时联合使用的药物包括利尿剂**，例如氢氯噻嗪和吲达帕胺。它们有助于顽固性高血压和盐敏感性高血压的患者，通过减少血容量来降低血压。但是要注意低钾血症、高尿酸血症等可能的副作用。\n\n- **SGLT-2抑制剂和GLP-1受体激动剂**作为降糖药物在抗高血压治疗中也显示了心血管保护作用，例如达格列净、恩格列净、利拉鲁肽和司美格鲁肽。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "ACEI",
+        "肾"
+      ],
+      "must_miss": [],
+      "reference_answer": "合并糖尿病的高血压患者推荐使用ACEI（如依那普利、培哚普利），具有保护肾脏的作用。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面准确，符合检索上下文，无危险建议",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面准确，符合检索上下文，无危险建议",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.41,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.09,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.5
+    },
+    {
+      "id": "Q10",
+      "category": "medicine",
+      "question": "对ACEI不耐受时可以换什么药？",
+      "intent": "medicine",
+      "response": "**当患者对ACEI（血管紧张素转换酶抑制剂）不耐受时，可以选择以下药物作为替代治疗：**\n\n- **血管紧张素受体拮抗剂（ARB）**： 这是常见的ACEI替代品，包括缬沙坦（Valsartan）、厄贝沙坦（Irbesartan）、氯沙坦（Losartan）和坎地沙坦（Candesartan）等药物，这些药物直接阻断血管紧张素Ⅱ的1型受体，降压效果与ACEI相当，但不会引起干咳。\n\n- **钙通道阻滞剂（CCB）**： 硝苯地平（Nifedipine）、氨氯地平（Amlodipine）、非洛地平（Felodipine）和拉西地平（Lacidipine）等均为常用药物，阻断血管平滑肌和心肌细胞的钙离子通道，扩张外周血管，降低外周阻力，降压效果强。\n\n- **β-受体阻滞剂**： 如美托洛尔（Metoprolol），比索洛尔（Bisoprolol）以及卡维地洛（Carvedilol）等，主要作用机制是阻断心脏β1受体，减慢心率，降低心肌收缩力和心输出量，适合合并冠心病、心力衰竭或快速心律失常的患者。\n\n**注意事项**：\n- 特别强调，具体用药需医生面诊后处方，请勿自行调药或停药。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.75,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "ARB"
+      ],
+      "must_miss": [],
+      "reference_answer": "对ACEI不耐受（如出现干咳）的患者可选择ARB类药物（缬沙坦、厄贝沙坦），疗效相当且副作用少。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面覆盖了ARB类药物，并提供了其他替代方案，完全符合参考答案和检索上下文。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面覆盖了ARB类药物，并提供了其他替代方案，完全符合参考答案和检索上下文。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.42,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.5
+    },
+    {
+      "id": "Q11",
+      "category": "medicine",
+      "question": "顽固性高血压可以怎么治疗？",
+      "intent": "general",
+      "response": "顽固性高血压的治疗可以采用多种措施，特别是药物联合治疗。对于顽固性高血压，推荐使用以下两种或多种不同机制的降压药物进行联合治疗：\n\n1. **钙通道阻滞剂（CCB）**：例如氨氯地平（Amlodipine）、非洛地平（Felodipine）、拉西地平（Lacidipine）。它们具有降压效果强、不受食盐摄入影响以及对老年人和单纯收缩期高血压效果好的特点。联合使用时可能需要关注头痛、面部潮红、踝部水肿和心悸等不良反应。\n\n2. **血管紧张素转换酶抑制剂（ACEI）**：包括依那普利（Enalapril）、贝那普利（Benazepril）。ACEI能够降低心血管疾病风险，在合并糖尿病、心力衰竭或心肌梗死后效果更佳。但需要注意其可能导致干咳、高钾血症和罕见的血管神经性水肿等反应。\n\n3. **血管紧张素受体拮抗剂（ARB）**：例如缬沙坦（Valsartan）、厄贝沙坦（Irbesartan）、氯沙坦（Losartan）、坎地沙坦（Candesartan）。ARB类药物同样有良好的降压效果且不引发干咳，具有良好的患者耐受性。\n\n4. **利尿剂**：噻嗪类利尿剂，如氢氯噻嗪（Hydrochlorothiazide）或吲达帕胺（Indapamide），对于顽固性高血压患者是非常有效的选择，尤其是对于盐敏感性高血压、顽固性高血压患者，可以减少血容量。但是需要注意可能引起的低钾血症和高尿酸血症等副作用。\n\n结合多种不同作用机制的降压药物联合使用，可以有效控制顽固性高血压患者的血压水平。请务必遵医嘱使用上述药物，定期监测血压、肝肾功能等指标，及时调整治疗方案。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）\n\n-  medicine_guide.txt\n-  3high_data.txt",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "利尿剂",
+        "联合"
+      ],
+      "must_miss": [],
+      "reference_answer": "顽固性高血压可在医生指导下联合用药，如CCB+ACEI/ARB+利尿剂（氢氯噻嗪）三联治疗。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面覆盖了治疗顽固性高血压的关键药物和联合用药原则，且完全基于检索上下文。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面覆盖了治疗顽固性高血压的关键药物和联合用药原则，且完全基于检索上下文。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.96,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.09,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.05
+    },
+    {
+      "id": "Q12",
+      "category": "medicine",
+      "question": "他汀类药物有哪些？主要不良反应是什么？",
+      "intent": "medicine",
+      "response": "**他汀类药物主要包括**：\n- 阿托伐他汀\n- 瑞舒伐他汀\n- 辛伐他汀\n\n**这些药物用于**：\n- 调脂治疗\n\n**常见不良反应包括**：\n- 肝功能异常（表现为ALT升高）\n- 肌酸激酶（CK）水平升高\n- 治疗过程中出现的肌肉疼痛\n\n**注意事项**：\n- 治疗前和治疗期间需监测肝功能和肌酸激酶。\n- 出现上述症状时，应及时就医排除横纹肌溶解等严重情况。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.29,
+      "must_hits": [
+        "他汀",
+        "阿托伐他汀"
+      ],
+      "must_miss": [],
+      "reference_answer": "常用他汀包括阿托伐他汀和瑞舒伐他汀，主要不良反应为肝功能异常和肌肉疼痛，严重者罕见横纹肌溶解。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答准确完整，符合检索上下文，无安全风险",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答准确完整，符合检索上下文，无安全风险",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.48,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.56
+    },
+    {
+      "id": "Q13",
+      "category": "medicine",
+      "question": "SGLT-2抑制剂是如何降糖的？有什么额外获益？",
+      "intent": "medicine",
+      "response": "**SGLT-2抑制剂通过以下机制降糖：**\n\n- 抑制肾脏近端小管SGLT-2受体，减少葡萄糖重吸收，使多余糖分从尿液排出。\n\n**SGLT-2抑制剂的额外获益包括：**\n\n- 降糖同时还具有减重、降压的作用。\n- 对心血管和肾脏有保护作用。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.4,
+      "elapsed_sec": 0.4,
+      "must_hits": [
+        "SGLT-2",
+        "尿液"
+      ],
+      "must_miss": [],
+      "reference_answer": "SGLT-2抑制剂（达格列净、恩格列净）通过抑制肾脏SGLT-2受体使多余糖分从尿液排出，同时有心血管和肾脏保护作用。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全符合参考答案和检索上下文，医学事实正确，无遗漏要点，无危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全符合参考答案和检索上下文，医学事实正确，无遗漏要点，无危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.8,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.87
+    },
+    {
+      "id": "Q14",
+      "category": "exercise",
+      "question": "三高人群每周应该运动多少次？推荐什么类型的运动？",
+      "intent": "exercise",
+      "response": "三高人群建议每周至少进行150分钟中等强度的有氧运动，可以分为每周5天，每天30分钟。推荐的运动类型包括快走、慢跑、游泳、骑自行车等。此外，每周还应该进行2-3次的抗阻训练，比如使用哑铃或拉力带进行肌肉锻炼。\n\n**推荐运动类型:**\n- 快走\n- 慢跑\n- 游泳\n- 骑自行车\n\n**注意事项:**\n- 在运动前后测量血糖，避免低血糖发生。\n- 高血压患者在运动时应注意不要过度增加心率或血压。\n- 运动计划应在医生指导下进行，根据个人健康状况调整运动强度和频率。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.28,
+      "must_hits": [
+        "有氧",
+        "5"
+      ],
+      "must_miss": [],
+      "reference_answer": "三高人群每周至少运动5天，每次30-60分钟中等强度有氧运动（快走、慢跑、游泳），每周2-3次抗阻训练。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全符合参考答案和检索上下文，覆盖所有要点，无危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全符合参考答案和检索上下文，覆盖所有要点，无危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.16,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.23
+    },
+    {
+      "id": "Q15",
+      "category": "exercise",
+      "question": "高血压患者运动时有哪些注意事项？",
+      "intent": "exercise",
+      "response": "高血压患者进行运动时需特别注意以下几点：\n\n- **运动类型**：适合进行低到中等强度的有氧运动，如快走、慢跑、骑自行车、游泳等，这些运动有助于改善心血管健康。\n\n- **频率与强度**：建议每周至少进行150分钟的中等强度有氧运动或者75分钟的高强度有氧运动，分散到每周5天，每天30分钟进行最佳。强度应控制在自身感觉“稍微用力但可以舒适交谈”的范围内。\n\n- **注意事项**：\n  - 运动前要做热身准备，避免突然高强度运动引发身体不适或意外；\n  - 运动中应监测心率和血压，避免潜在的危险；\n  - 运动后进行适当的冷却放松，帮助心率和血压平稳回落；\n  - 注意补水，避免脱水；\n  - 运动过程中如有不适应立即停止，并咨询医生。\n\n- **不适合运动的情况**：\n  - 患者最近有心血管系统急性发作，如心绞痛、心肌梗死等；\n  - 患者在运动中发现胸痛、呼吸困难、不规则心跳或血压急剧变化等；\n  - 病情控制不佳，血压显著高于正常水平时；\n  - 患有中重度心血管疾病或其他病情不稳定时。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 0.5,
+      "key_coverage": 0.4,
+      "elapsed_sec": 0.28,
+      "must_hits": [
+        "热身"
+      ],
+      "must_miss": [
+        "憋气"
+      ],
+      "reference_answer": "高血压患者运动时应避免憋气用力（Valsalva动作），运动前充分热身5-10分钟，如出现胸闷头晕应立即停止。",
+      "judge_score": 0.9,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.8,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答覆盖了关键点，但未明确提及避免憋气用力（Valsalva动作）",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.9,
+          "correctness": 0.8,
+          "completeness": 0.8,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答覆盖了关键点，但未明确提及避免憋气用力（Valsalva动作）",
+          "missing_points": [
+            "避免憋气用力（Valsalva动作）"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.92,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.0
+    },
+    {
+      "id": "Q16",
+      "category": "exercise",
+      "question": "糖尿病患者运动前后需要注意什么？",
+      "intent": "exercise",
+      "response": "**糖尿病患者运动前后需要注意以下几点：**\n\n- **监测血糖水平**：运动前应监测血糖水平，确保血糖处于安全范围内。如果血糖低于3.9mmol/L或高于16.7mmol/L，应避免运动，待血糖稳定后重新评估。\n\n- **补水**：运动前多补充水分，避免脱水，同时注意防止低血糖的发生。\n\n- **选择合适的时间**：尽量避免餐后立即进行剧烈运动，应选择餐后1-2小时，血糖较为平稳的时候进行运动。\n\n- **运动方式**：推荐中等强度的有氧运动，如快走、慢跑、游泳、骑车等，每周至少150分钟。运动前后注意热身和拉伸，避免运动损伤。\n\n- **佩戴警示牌**：运动时佩戴糖尿病标识或携带身份卡，以防万一出现低血糖反应时及时得到帮助。\n\n- **紧急应对措施**：应携带含糖饮料或水果糖，以应对可能发生的低血糖反应。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.6,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "血糖",
+        "监测"
+      ],
+      "must_miss": [],
+      "reference_answer": "糖尿病患者运动前后应监测血糖，血糖<5.6mmol/L时需先进食少量碳水化合物，血糖>16.7mmol/L且合并酮症时禁止运动。",
+      "judge_score": 0.9,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.8,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本覆盖了要点，但血糖监测的具体数值与参考答案略有出入。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.9,
+          "correctness": 0.8,
+          "completeness": 0.8,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本覆盖了要点，但血糖监测的具体数值与参考答案略有出入。",
+          "missing_points": [
+            "血糖<5.6mmol/L时需先进食少量碳水化合物",
+            "血糖>16.7mmol/L且合并酮症时禁止运动"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.13,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.21
+    },
+    {
+      "id": "Q17",
+      "category": "monitor",
+      "question": "高血压的诊断标准是什么？血压正常值是多少？",
+      "intent": "monitor",
+      "response": "高血压的诊断标准是：以体循环动脉血压增高为主要特征的临床综合征。血压正常值是收缩压<120 mmHg且舒张压<80 mmHg。\n\n**高血压诊断标准：**\n- 收缩压≥140 mmHg\n- 舒张压≥90 mmHg\n\n**血压正常值范围：**\n- 收缩压：<120 mmHg\n- 舒张压：<80 mmHg\n\n**监测频率及自测方法：**\n- **监测频率：** 高血压患者需要定期监测血压，建议至少每周一次。\n- **自测方法：** 使用家用血压计进行自我血压监测，确保测量环境安静、舒适，测量前30分钟内避免剧烈运动和摄入咖啡因或烟草。\n\n**异常处理建议：**\n- 如果血压持续超出正常范围，应当尽快就医，并根据医生建议调整治疗方案，可能包括改变生活方式和药物治疗。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.833,
+      "elapsed_sec": 0.42,
+      "must_hits": [
+        "140",
+        "90",
+        "mmHg"
+      ],
+      "must_miss": [],
+      "reference_answer": "诊室血压SBP≥140mmHg和/或DBP≥90mmHg可诊断高血压。正常血压为<120/80mmHg。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全覆盖了高血压诊断标准和血压正常值，且提供了额外的监测频率和自测方法，符合检索上下文。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全覆盖了高血压诊断标准和血压正常值，且提供了额外的监测频率和自测方法，符合检索上下文。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.16,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.24
+    },
+    {
+      "id": "Q18",
+      "category": "monitor",
+      "question": "糖尿病患者需要定期检查哪些指标？",
+      "intent": "monitor",
+      "response": "**糖尿病患者需定期监测的指标包括**\n\n- **血糖水平**：\n  - **空腹血糖**：正常水平应小于6.1mmol/L，糖尿病诊断标准为≥7.0mmol/L。\n  - **餐后2小时血糖**：正常水平应小于7.8mmol/L，糖尿病诊断标准为≥11.1mmol/L。\n  - **随机血糖**：三多一少症状合并随机血糖≥11.1mmol/L可确诊糖尿病。\n\n- **糖化血红蛋白（HbA1c）**：\n  - **正常范围**：小于5.7%。\n  - **糖尿病前期**：5.7%-6.4%。\n  - **糖尿病**：≥6.5%。\n  - **监测频率**：一般成人每3-6个月一次，控制目标<7.0%。\n\n- **体重和腰围**：\n  - 监测体重和腰围以评估糖尿病患者的体重控制情况，腰围男性应小于90cm，女性小于85cm。\n\n- **血压**：\n  - **控制目标**：140/90 mmHg以下，理想目标为130/80 mmHg以下。\n\n- **血脂水平**：\n  - 低密度脂蛋白胆固醇（LDL-C）应控制在2.6 mmol/L以下。\n  - 高密度脂蛋白胆固醇（HDL-C）男性应大于1.0 mmol/L，女性应大于1.3 mmol/L。\n  - 甘油三酯（TG）应小于1.7 mmol/L。\n\n- **其他指标**：\n  - **肾功能**：包括肌酐和估算的肾小球滤过率（eGFR）。\n  - **视网膜病变筛查**：建议每年至少进行一次眼底检查。\n  - **足部神经和血液循环检查**：评估存在糖尿病足的风险。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.31,
+      "must_hits": [
+        "糖化血红蛋白",
+        "血糖"
+      ],
+      "must_miss": [],
+      "reference_answer": "糖尿病患者需定期监测空腹和餐后血糖、每3-6个月查一次糖化血红蛋白（HbA1c），目标<7.0%。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面覆盖了糖尿病患者需要定期检查的指标，且与检索上下文一致。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面覆盖了糖尿病患者需要定期检查的指标，且与检索上下文一致。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.19,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.27
+    },
+    {
+      "id": "Q19",
+      "category": "monitor",
+      "question": "高血脂患者应该多久检查一次血脂？血脂检查包含哪些项目？",
+      "intent": "general",
+      "response": "高血脂患者应该定期检查血脂，但未找到具体多久检查一次的建议。血脂检查通常包含以下项目：\n\n- **总胆固醇（TC）**\n- **低密度脂蛋白胆固醇（LDL-C）**\n- **高密度脂蛋白胆固醇（HDL-C）**\n- **甘油三酯（TG）**\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.8,
+      "elapsed_sec": 0.28,
+      "must_hits": [
+        "血脂",
+        "胆固醇"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血脂患者每3-6个月检查一次血脂四项（TC、TG、LDL-C、HDL-C）。",
+      "judge_score": 0.85,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.6,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本正确但未明确3-6个月的检查频率",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.85,
+          "correctness": 0.8,
+          "completeness": 0.6,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本正确但未明确3-6个月的检查频率",
+          "missing_points": [
+            "3-6个月"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.03,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.11
+    },
+    {
+      "id": "Q20",
+      "category": "complication",
+      "question": "高血压可能引起什么严重并发症？",
+      "intent": "complication",
+      "response": "高血压可能导致多种严重并发症，主要包括心脏和脑部疾病。具体来说：\n\n- **心脑血管疾病**：高血压容易诱发心脑血管疾病。长期高血压可导致血管壁损伤，增加冠心病的风险。\n- **脑血管疾病**：高血压可使脑血管疾病的风险增加1.5至2倍，包括中风等脑部疾病。\n\n为了降低这些风险，高血压患者应注意饮食控制，包括低盐（每天食盐摄入量不宜超过5克）、低脂，避免食用腌制食品如咸菜、腊肉。此外，还需保持规律作息，适量运动，定期监测身体各项指标。",
+      "context_recall": 1.0,
+      "answer_accuracy": 0.5,
+      "key_coverage": 0.2,
+      "elapsed_sec": 0.25,
+      "must_hits": [
+        "心脑血管"
+      ],
+      "must_miss": [
+        "脑卒中"
+      ],
+      "reference_answer": "高血压可导致脑卒中、冠心病和心肌梗死、高血压性肾病、眼底病变等多种严重并发症。",
+      "judge_score": 0.85,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.6,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答基本正确，覆盖了主要并发症，但缺少肾病和视网膜病变的补充点。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.85,
+          "correctness": 0.8,
+          "completeness": 0.6,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答基本正确，覆盖了主要并发症，但缺少肾病和视网膜病变的补充点。",
+          "missing_points": [
+            "高血压性肾病",
+            "眼底病变"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 6.77,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 6.85
+    },
+    {
+      "id": "Q21",
+      "category": "complication",
+      "question": "高血脂为什么需要重视？",
+      "intent": "general",
+      "response": "高血脂需要重视，因为它会加速动脉粥样硬化的形成，导致心血管疾病的风险增加。具体来说，高血脂是指血脂水平过高，这对身体产生了多个负面影响。首先，长期的高血脂水平会导致血管壁受损，加速动脉粥样硬化的进程。这意味着血管内的脂肪沉积增多，容易形成斑块并阻塞血管，进而提高心血管疾病的风险，如心脏病和中风。为了预防和管理高血脂，建议减少摄取饱和脂肪和反式脂肪，多吃富含不饱和脂肪的食物，如深海鱼类和新鲜蔬菜，并减少动物内脏和油炸食品的摄入。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.5,
+      "elapsed_sec": 0.63,
+      "must_hits": [
+        "动脉粥样硬化"
+      ],
+      "must_miss": [],
+      "reference_answer": "高血脂是动脉粥样硬化性心血管疾病（ASCVD）最重要的危险因素，LDL-C升高会加速动脉粥样硬化形成。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答完全覆盖了参考答案和检索上下文的关键点，医学事实正确且无危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答完全覆盖了参考答案和检索上下文的关键点，医学事实正确且无危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 8.73,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 8.81
+    },
+    {
+      "id": "Q22",
+      "category": "complication",
+      "question": "糖尿病的慢性并发症有哪些？",
+      "intent": "complication",
+      "response": "**糖尿病的慢性并发症包括：**\n\n- **心血管疾病**：糖尿病患者发生冠心病的风险是非糖尿病人群的2-4倍，脑血管疾病风险增加1.5-2倍。\n- **糖尿病肾病**：约20%-40%的糖尿病患者合并糖尿病肾病，它是终末期肾病的主要原因。\n- **糖尿病视网膜病变**：是工作年龄段人群致盲的主要原因，病程超过10年的糖尿病患者中约有80%以上出现不同程度的视网膜病变。\n- **糖尿病神经病变**：周围神经病变最常见，表现为对称性肢体末端麻木、疼痛、感觉异常。\n- **糖尿病足**：由于神经病变和血管病变导致足部感染、溃疡和/或深层组织破坏，严重时可能需要截肢。\n\n**预警信号和降低风险措施**\n\n- **预警信号**：\n  - 视觉问题（视觉模糊）\n  - 四肢末端疼痛、麻木或刺痛（神经病变迹象）\n  - 膀胱功能障碍（排尿困难）\n  - 足部溃疡、感染或难以愈合的伤口\n  - 心悸、胸痛或呼吸困难（心血管疾病标志）\n  - 尿液中出现泡沫或血尿\n\n- **降低风险措施**：\n  - **血糖控制**：严格监测并保持血糖在目标范围内。\n  - **健康饮食**：选择低GI食物、控制饱和脂肪与糖分的摄入，食物中增加膳食纤维。\n  - **身体活动**：定期进行有氧和抗阻力训练。\n  - **足部护理**：定期检查并清洁足部，避免受伤。\n  - **定期检查**：包括眼底筛查、尿白蛋白检测和足部功能检查。\n  - **药物管理**：依从医嘱，必要时使用包括二甲双胍、SGLT-2抑制剂在内的药物治疗。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 1.0,
+      "elapsed_sec": 0.25,
+      "must_hits": [
+        "肾病",
+        "视网膜病变"
+      ],
+      "must_miss": [],
+      "reference_answer": "糖尿病的慢性并发症包括糖尿病肾病、视网膜病变、周围神经病变、糖尿病足和心血管疾病等。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面准确，覆盖所有关键点，且无安全风险",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面准确，覆盖所有关键点，且无安全风险",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 19.19,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 19.27
+    },
+    {
+      "id": "Q23",
+      "category": "lifestyle",
+      "question": "三高人群在日常生活中该怎么做？",
+      "intent": "general",
+      "response": "三高人群（高血压、高血脂和高血糖）在日常生活中应通过综合管理来控制病情，具体措施包括饮食调整、适当运动、规律作息和身体指标监测等。\n\n1. **饮食管理**：\n   - **限制盐分**：每天食盐摄入量不超过5克。\n   - **健康脂肪**：多吃茶油、橄榄油和坚果等健康脂肪来源，限制饱和脂肪和反式脂肪摄入。\n   - **低血糖指数主食**：推荐燕麦、糙米、荞麦和全麦面包等低GI主食。\n   - **蛋白质来源**：多吃鱼、禽、蛋、豆制品以及奶类。\n   - **蔬果**：增加新鲜蔬菜和水果摄入，例如深海鱼类和新鲜蔬菜可以促进健康。\n   - **忌食**：避免高糖饮料、甜点、糕点和蜜饯等添加糖食品。\n\n2. **适量运动**：每周至少150分钟中等强度有氧运动，如快走、慢跑、游泳、骑车，每周2-3次抗阻训练。运动前后监测血糖。\n\n3. **规律作息**：保持良好的睡眠和作息规律，减轻压力。\n\n4. **身体指标监测**：定期监测血压、血脂和血糖水平，记录并及时向医生咨询。\n\n5. **药物治疗**：遵医嘱服用药物。例如，高血压患者可以选择钙通道阻滞剂、血管紧张素转换酶抑制剂、血管紧张素受体拮抗剂、利尿剂和β-受体阻滞剂；2型糖尿病的一线治疗药物为二甲双胍，也有磺脲类、DPP-4抑制剂、SGLT-2抑制剂和GLP-1受体激动剂等。血脂异常可使用他汀类和依折麦布等调脂药物。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 0.833,
+      "answer_accuracy": 0.667,
+      "key_coverage": 0.667,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "规律作息",
+        "运动"
+      ],
+      "must_miss": [
+        "戒烟"
+      ],
+      "reference_answer": "三高人群应保持规律作息（睡眠7-8小时）、适量运动、戒烟限酒、保持心理平衡，定期监测各项指标。",
+      "judge_score": 1.0,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答全面覆盖了所有关键点，医学事实正确，无危险建议。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 1.0,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答全面覆盖了所有关键点，医学事实正确，无危险建议。",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 14.51,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 14.59
+    },
+    {
+      "id": "Q24",
+      "category": "lifestyle",
+      "question": "吸烟和饮酒对三高有什么影响？",
+      "intent": "general",
+      "response": "根据当前知识库，暂无相关信息。\n\n（注：本回答由 AI 系统基于限定文献自动生成，仅供参考，不能替代专业医生的诊断与处方。）",
+      "context_recall": 1.0,
+      "answer_accuracy": 0.0,
+      "key_coverage": 0.0,
+      "elapsed_sec": 0.29,
+      "must_hits": [],
+      "must_miss": [
+        "戒烟",
+        "饮酒"
+      ],
+      "reference_answer": "吸烟收缩血管升高血压、加速动脉粥样硬化；饮酒升高血压和甘油三酯。三高人群应戒烟限酒，最好戒酒。",
+      "judge_score": 0.2,
+      "judge_correctness": 1.0,
+      "judge_completeness": 1.0,
+      "judge_faithfulness": 1.0,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答未提供任何相关信息，完全缺失要点",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.2,
+          "correctness": 1.0,
+          "completeness": 1.0,
+          "faithfulness": 1.0,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答未提供任何相关信息，完全缺失要点",
+          "missing_points": [
+            "戒烟",
+            "饮酒",
+            "尼古丁",
+            "血管",
+            "甘油三酯"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.68,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.76
+    },
+    {
+      "id": "Q25",
+      "category": "general",
+      "question": "三高之间有什么关系？为什么说三高互为危险因素？",
+      "intent": "general",
+      "response": "高血压、高血糖和高血脂之间存在密切的关联，容易互为危险因素。具体表现为以下几点：\n\n1. **高血压**主要影响心脏和血管，高盐高脂饮食容易使血压升高。长期高血压会增加心脑血管疾病的风险。\n2. **高血糖**主要指血液中葡萄糖含量高于正常值，严重时会引发糖尿病，而高血糖又容易导致血管疾病，进一步增加心血管疾病的风险。\n3. **高血脂**则表示血脂水平过高，高脂饮食会加速动脉粥样硬化的形成，进而影响心血管健康。高脂血症患者可能会有更高的心血管疾病和其他代谢紊乱的风险。\n\n三高症状容易互相影响和加重，具体来说，高血压患者若不加注意，也易引发高血糖和高血脂，从而加大心血管疾病的风险；同样，高血糖和高血脂也会反过来加剧心血管负担，诱发高血压。因此，三高诊断及管理应采取综合措施，调节饮食，适量运动，定期监测身体指标，从而降低各种并发症的风险。",
+      "context_recall": 0.75,
+      "answer_accuracy": 0.0,
+      "key_coverage": 0.5,
+      "elapsed_sec": 0.39,
+      "must_hits": [],
+      "must_miss": [
+        "胰岛素抵抗"
+      ],
+      "reference_answer": "三高常合并发生，共同以胰岛素抵抗为中心，通过代谢综合征相互关联，肥胖是共同危险因素。",
+      "judge_score": 0.65,
+      "judge_correctness": 0.6,
+      "judge_completeness": 0.4,
+      "judge_faithfulness": 0.4,
+      "judge_relevance": 0.8,
+      "judge_safety": 0.8,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答部分正确但未提及胰岛素抵抗和代谢综合征",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.65,
+          "correctness": 0.6,
+          "completeness": 0.4,
+          "faithfulness": 0.4,
+          "relevance": 0.8,
+          "safety": 0.8,
+          "reason": "回答部分正确但未提及胰岛素抵抗和代谢综合征",
+          "missing_points": [
+            "胰岛素抵抗",
+            "代谢综合征",
+            "肥胖"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 4.15,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 4.23
+    },
+    {
+      "id": "Q26",
+      "category": "general",
+      "question": "三高人群年度体检需要重点注意哪些方面的检查？",
+      "intent": "monitor",
+      "response": "三高人群在年度体检中需要重点注意的检查方面包括但不限于以下几项：\n\n- **血压监测**：使用血压计测量，监测频率为每次体检时进行，正常成人血压应保持在<120/80 mmHg。自测方法包括定期在家使用电子血压计测量，以获得更全面的血压数据。\n- **血糖水平**：利用血糖仪测量，监测频率为随餐后和空腹血糖检测，正常参考范围为空腹血糖<6.1 mmol/L，餐后2小时血糖<7.8 mmol/L。\n- **血脂谱**：进行血液生化检查以监测总胆固醇、低密度脂蛋白胆固醇、高密度脂蛋白胆固醇和甘油三酯等指标，监测频率为每年至少一次，正常参考值根据具体指标有所不同。\n- **心电图**：用于检测心脏功能，尤其是是否存在心律不齐和心肌缺血等，监测频率为每次体检时。\n- **尿常规+微蛋白**：检测尿液中是否存在蛋白质，以早期发现是否有糖尿病肾病，监测频率为每年至少一次。\n\n异常处理建议如下：\n\n- 当血压显著高于正常范围时，建议采用健康饮食（低盐、低脂）、适量运动以及必要时使用药物控制，如钙通道阻滞剂、ACEI或ARB等。\n- 如果血糖水平升高至诊断糖尿病阈值（空腹血糖≥7.0 mmol/L，餐后2小时血糖≥11.1 mmol/L，HbA1c≥6.5%），需采取综合措施：饮食控制、增加体力活动，以及可能采用药物治疗，如二甲双胍或SGLT-2抑制剂（达格列净、恩格列净）等。\n- 血脂水平异常，特别是甘油三酯水平≥1.7 mmol/L，需要调整饮食结构，减少饱和脂肪和反式脂肪的摄入，使用健康脂肪如橄榄油、茶油，必要时使用调脂药物如他汀类、依折麦布或高纯度鱼油制剂（如二十碳五烯酸乙酯）。\n- 着重关注包括眼底检查、血压监测和心电图在内的并发症筛查，利于发现和管理糖尿病足、糖尿病视网膜病变及心血管疾病等重大风险。\n\n异常检测结果需由专业医师进一步诊断和治疗，避免自行用药。",
+      "context_recall": 1.0,
+      "answer_accuracy": 1.0,
+      "key_coverage": 0.833,
+      "elapsed_sec": 0.27,
+      "must_hits": [
+        "血压",
+        "血糖",
+        "血脂"
+      ],
+      "must_miss": [],
+      "reference_answer": "三高人群年度体检应重点关注血压、血糖、血脂、心电图、肝肾功能、尿微量白蛋白和眼底检查。",
+      "judge_score": 0.88,
+      "judge_correctness": 0.8,
+      "judge_completeness": 0.8,
+      "judge_faithfulness": 0.8,
+      "judge_relevance": 1.0,
+      "judge_safety": 1.0,
+      "judge_reason": "deepseek-ai/DeepSeek-V3: 回答覆盖了关键检查项目，提供了详细参考值，并强调了专业医师的重要性。",
+      "judge_models": [
+        "deepseek-ai/DeepSeek-V3"
+      ],
+      "judge_details": [
+        {
+          "model": "deepseek-ai/DeepSeek-V3",
+          "overall": 0.88,
+          "correctness": 0.8,
+          "completeness": 0.8,
+          "faithfulness": 0.8,
+          "relevance": 1.0,
+          "safety": 1.0,
+          "reason": "回答覆盖了关键检查项目，提供了详细参考值，并强调了专业医师的重要性。",
+          "missing_points": [
+            "肾功能检查"
+          ],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 5.41,
+          "error": ""
+        },
+        {
+          "model": "THUDM/glm-4-9b-chat",
+          "overall": null,
+          "correctness": null,
+          "completeness": null,
+          "faithfulness": null,
+          "relevance": null,
+          "safety": null,
+          "reason": "",
+          "missing_points": [],
+          "unsupported_claims": [],
+          "safety_issues": [],
+          "elapsed_sec": 0.08,
+          "error": "Error code: 403 - {'code': 30003, 'message': 'Model disabled.', 'data': None}"
+        }
+      ],
+      "judge_elapsed_sec": 5.49
+    }
+  ],
+  "generated_at": "20260608_162943"
+}
